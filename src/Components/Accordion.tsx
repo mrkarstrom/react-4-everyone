@@ -6,8 +6,8 @@ const Accordion = () => {
 
   return (
     <div>
-      {/* {isToggled && <h3>Show Me</h3>} */}
-      {isToggled ? <TextBlock /> : null}
+      {isToggled && <TextBlock />}
+      {/* {isToggled ? <TextBlock /> : null} */}
       <button onClick={() => setIsToggled(!isToggled)}>
         {isToggled ? <span>Close</span> : <span>Open</span>}
       </button>
