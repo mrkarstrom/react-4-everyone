@@ -1,15 +1,11 @@
 import './App.css';
-import Accordion from './Components/Accordion';
-import Counter from './Components/Counter';
-import Input from './Components/Input';
+import MoviesList from './Components/MoviesList';
 
 function App() {
   return (
-    <>
-      <Accordion />
-      <Input />
-      <Counter />
-    </>
+    <div className='card'>
+    <MoviesList/>
+    </div>
   );
 }
 
