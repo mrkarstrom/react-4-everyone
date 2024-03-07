@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const movies = [
   {
     id: 1,
@@ -14,12 +16,19 @@ const movies = [
 ];
 
 const MoviesList = () => {
+  const [filter, setFilter] = useState('');
+
   return (
     <div>
+      <input onChange={(e) => setFilter(e.target.value)} value={filter} />
       <ul>
-        {movies.map((movie) => {
-          return <li key={movie.id}>{movie.name}</li>;
-        })}
+        {movies
+          .filter((movie) => {
+            return movie.name.toLowerCase().includes(filter.toLowerCase());
+          })
+          .map((movie) => {
+            return <li key={movie.id}>{movie.name}</li>;
+          })}
       </ul>
     </div>
   );
